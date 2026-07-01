@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+data/beir/
+data/mock/
+results/*.log
+.env
+.DS_Store

@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hybrid-rag"
+version = "0.1.0"
+description = "Hybrid retrieval (BM25 + dense) with pluggable rerankers for RAG: fusion, cross-encoders, ColBERT, LLM rerankers, evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Thanh Vu" }]
+keywords = ["rag", "retrieval", "reranking", "bm25", "hybrid-search", "llm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Neural embedders, cross-encoders and ColBERT-style late interaction
+models = ["sentence-transformers>=3.0", "transformers>=4.40", "torch>=2.2"]
+# Approximate nearest-neighbour index
+faiss = ["faiss-cpu>=1.8"]
+# Claude-powered LLM reranker + grounded generator with citations
+llm = ["anthropic>=1,<2"]
+# REST API
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.5", "httpx>=0.27"]
+all = ["hybrid-rag[models,faiss,llm,api]"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hybrid_rag"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "models: requires sentence-transformers / torch and downloads model weights",
+    "llm: calls the Claude API (needs credentials)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B905"]  # zip(strict=) is noise for equal-length parallel lists

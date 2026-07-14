@@ -5,8 +5,14 @@ from .chunking import (
     RecursiveChunker,
     SentenceChunker,
 )
+from .embeddings import (
+    CachedEmbedder,
+    HashingEmbedder,
+    SentenceTransformerEmbedder,
+)
 from .retrievers import (
     BM25Retriever,
+    DenseRetriever,
 )
 from .types import (
     Document,
@@ -19,6 +25,10 @@ __all__ = [
     "Document",
     "SearchResult",
     "BM25Retriever",
+    "DenseRetriever",
+    "HashingEmbedder",
+    "SentenceTransformerEmbedder",
+    "CachedEmbedder",
     "FixedSizeChunker",
     "SentenceChunker",
     "RecursiveChunker",

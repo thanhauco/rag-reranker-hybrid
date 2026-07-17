@@ -10,6 +10,14 @@ from .embeddings import (
     HashingEmbedder,
     SentenceTransformerEmbedder,
 )
+from .fusion import (
+    comb_mnz,
+    comb_sum,
+    distribution_based_fusion,
+    fuse,
+    reciprocal_rank_fusion,
+    weighted_fusion,
+)
 from .retrievers import (
     BM25Retriever,
     DenseRetriever,
@@ -32,4 +40,10 @@ __all__ = [
     "FixedSizeChunker",
     "SentenceChunker",
     "RecursiveChunker",
+    "reciprocal_rank_fusion",
+    "weighted_fusion",
+    "distribution_based_fusion",
+    "comb_sum",
+    "comb_mnz",
+    "fuse",
 ]

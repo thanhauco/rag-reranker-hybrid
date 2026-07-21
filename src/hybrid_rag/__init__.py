@@ -21,6 +21,7 @@ from .fusion import (
 from .retrievers import (
     BM25Retriever,
     DenseRetriever,
+    HybridRetriever,
 )
 from .types import (
     Document,
@@ -34,6 +35,7 @@ __all__ = [
     "SearchResult",
     "BM25Retriever",
     "DenseRetriever",
+    "HybridRetriever",
     "HashingEmbedder",
     "SentenceTransformerEmbedder",
     "CachedEmbedder",

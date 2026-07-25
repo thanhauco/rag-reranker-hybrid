@@ -1,0 +1,30 @@
+{"_id": "q01", "text": "FATAL: sorry, too many clients already"}
+{"_id": "q02", "text": "my postgres database is running out of connections, what should I do?"}
+{"_id": "q03", "text": "pod keeps restarting with exit code 137"}
+{"_id": "q04", "text": "why does my container get killed when it uses too much RAM"}
+{"_id": "q05", "text": "difference between readiness and liveness probe"}
+{"_id": "q06", "text": "should liveness checks depend on the database?"}
+{"_id": "q07", "text": "maxmemory-policy allkeys-lru"}
+{"_id": "q08", "text": "prevent thundering herd when a cache key expires"}
+{"_id": "q09", "text": "how to handle HTTP 429 responses from an API"}
+{"_id": "q10", "text": "avoid charging a customer twice when a payment request is retried"}
+{"_id": "q11", "text": "rate limiter algorithm that allows short bursts"}
+{"_id": "q12", "text": "how do I validate a JWT securely"}
+{"_id": "q13", "text": "PKCE for single page apps"}
+{"_id": "q14", "text": "best way to hash user passwords"}
+{"_id": "q15", "text": "threads don't make my CPU heavy python code any faster"}
+{"_id": "q16", "text": "time.sleep blocks the asyncio event loop"}
+{"_id": "q17", "text": "find which code is leaking memory in a python service"}
+{"_id": "q18", "text": "ModuleNotFoundError even though I pip installed the package"}
+{"_id": "q19", "text": "can I aggregate latency percentiles across instances in prometheus"}
+{"_id": "q20", "text": "restore a git branch I accidentally deleted"}
+{"_id": "q21", "text": "why rerank results after hybrid retrieval"}
+{"_id": "q22", "text": "late interaction MaxSim scoring"}
+{"_id": "q23", "text": "how big should chunks be for RAG"}
+{"_id": "q24", "text": "kafka consumers are falling behind the producers"}
+{"_id": "q25", "text": "x509: certificate has expired or is not yet valid"}
+{"_id": "q26", "text": "zero downtime database schema change"}
+{"_id": "q27", "text": "all my kubernetes pods restarted when the database went down"}
+{"_id": "q28", "text": "make docker images smaller"}
+{"_id": "q29", "text": "kuberntes autoscalr cpu utilisation"}
+{"_id": "q30", "text": "alert on error budget consumption"}

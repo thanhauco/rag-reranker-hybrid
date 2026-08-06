@@ -16,6 +16,9 @@ from .heuristic import (
 from .http import (
     HTTPReranker,
 )
+from .mmr import (
+    MMRReranker,
+)
 
 
 def __getattr__(name: str):
@@ -34,6 +37,7 @@ __all__ = [
     "ColBERTReranker",
     "HashingTokenEncoder",
     "HFTokenEncoder",
+    "MMRReranker",
     "HTTPReranker",
     "maxsim",
 ]

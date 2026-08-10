@@ -4,6 +4,10 @@ from .base import (
     IdentityReranker,
     Reranker,
 )
+from .cascade import (
+    CascadeReranker,
+    EnsembleReranker,
+)
 from .colbert import (
     ColBERTReranker,
     HashingTokenEncoder,
@@ -38,6 +42,8 @@ __all__ = [
     "HashingTokenEncoder",
     "HFTokenEncoder",
     "MMRReranker",
+    "CascadeReranker",
+    "EnsembleReranker",
     "HTTPReranker",
     "maxsim",
 ]

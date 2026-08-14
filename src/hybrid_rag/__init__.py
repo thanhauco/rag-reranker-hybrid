@@ -18,6 +18,15 @@ from .fusion import (
     reciprocal_rank_fusion,
     weighted_fusion,
 )
+from .generation import (
+    Answer,
+    ClaudeGenerator,
+    ExtractiveGenerator,
+)
+from .pipeline import (
+    RAGPipeline,
+    RAGResponse,
+)
 from .retrievers import (
     BM25Retriever,
     DenseRetriever,
@@ -48,4 +57,9 @@ __all__ = [
     "comb_sum",
     "comb_mnz",
     "fuse",
+    "RAGPipeline",
+    "RAGResponse",
+    "Answer",
+    "ClaudeGenerator",
+    "ExtractiveGenerator",
 ]

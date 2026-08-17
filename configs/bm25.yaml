@@ -1,0 +1,9 @@
+# Lexical baseline. No models, no GPU - always run this first.
+retriever:
+  type: bm25
+  k1: 1.2
+  b: 0.75
+  variant: okapi        # okapi | plus | l
+pipeline:
+  retrieve_k: 100
+  rerank_k: 10

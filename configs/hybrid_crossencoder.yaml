@@ -1,0 +1,25 @@
+# Production-style hybrid: BM25 + BGE bi-encoder, fused with RRF, reranked by a
+# cross-encoder, de-duplicated with MMR. Needs: pip install -e ".[models]"
+chunker:
+  type: sentence
+  max_words: 160
+  overlap_sentences: 1
+retriever:
+  type: hybrid
+  fusion: rrf
+  candidate_k: 100
+  components:
+    bm25: {type: bm25, k1: 1.2, b: 0.75}
+    dense:
+      type: dense
+      embedder: {type: st, model_name: BAAI/bge-small-en-v1.5, cache: true}
+reranker:
+  type: cascade
+  stages:
+    - {type: cross_encoder, model_name: minilm, keep: 20}     # or bge-base / bge-m3
+    - {type: mmr, lambda_: 0.8, keep: 10}
+generator:
+  type: extractive
+pipeline:
+  retrieve_k: 50
+  rerank_k: 10

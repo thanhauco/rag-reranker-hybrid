@@ -1,0 +1,17 @@
+# Convex-combination fusion with a per-query lexical weight: identifier-heavy queries
+# ("ERR_CONN_RESET", "v2.3.1", quoted phrases) lean on BM25, long questions lean dense.
+retriever:
+  type: hybrid
+  fusion: weighted
+  fusion_kwargs: {normalization: minmax}
+  weights: {bm25: 0.5, dense: 0.5}     # base alpha for bm25
+  dynamic_alpha: true
+  candidate_k: 100
+  components:
+    bm25: {type: bm25}
+    dense: {type: dense, embedder: {type: hashing}}
+reranker:
+  type: colbert            # offline hashing token encoder; set encoder: {model_name: ...} for HF
+pipeline:
+  retrieve_k: 50
+  rerank_k: 10

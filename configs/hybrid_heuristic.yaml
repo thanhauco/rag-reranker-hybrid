@@ -1,0 +1,17 @@
+# Fully offline hybrid: BM25 + hashed char-n-gram "dense" + feature-based reranker.
+# Runs anywhere (CI, laptops) with only numpy installed.
+retriever:
+  type: hybrid
+  fusion: rrf           # rrf | weighted | dbsf | combsum | combmnz
+  candidate_k: 100
+  fusion_kwargs: {k: 60}
+  components:
+    bm25: {type: bm25}
+    dense: {type: dense, embedder: {type: hashing, dim: 1024}}
+reranker:
+  type: heuristic
+generator:
+  type: extractive
+pipeline:
+  retrieve_k: 50
+  rerank_k: 10

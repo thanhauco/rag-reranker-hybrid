@@ -10,6 +10,10 @@ from .embeddings import (
     HashingEmbedder,
     SentenceTransformerEmbedder,
 )
+from .factory import (
+    build_pipeline,
+    load_config,
+)
 from .fusion import (
     comb_mnz,
     comb_sum,
@@ -62,4 +66,6 @@ __all__ = [
     "Answer",
     "ClaudeGenerator",
     "ExtractiveGenerator",
+    "build_pipeline",
+    "load_config",
 ]

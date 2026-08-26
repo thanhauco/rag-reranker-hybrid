@@ -1,0 +1,6 @@
+.venv
+.git
+data/beir
+results
+**/__pycache__
+.pytest_cache
